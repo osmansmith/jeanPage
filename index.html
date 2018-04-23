@@ -7,14 +7,22 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/fontawesome-all.min.css">
 
     <title>Jean's Page!</title>
     <style>
      .presentacion{
-       margin: 5% 0 5% 0;
+       margin: 10% 0 10% 0;
      }
      .contenido{
        padding: 10% 0 10% 0;
+     }
+     .productos{
+       padding:3% 0 5% 0;
+       margin: 10% 0 10% 0;
+     }
+     .card{
+       border:none;
      }
     </style>
   </head>
@@ -25,7 +33,7 @@
                 <div class="collapse navbar-collapse navbarText" id="navbarText">
                   <ul class="navbar-nav ml-auto">
                       <li class="nav-item active px-3">
-                          <a class="nav-link" href="#"><small>+569 666 666 666</small></a>
+                          <a class="nav-link text-primary" href="#"><i class="fas fa-mobile-alt fa-lg"></i><strong> +569 666 666 666</strong> </a>
                         </li>
                     <li class="nav-item active px-3">
                       <a class="nav-link" href="#"><small>Ayuda y soporte</small></a>
@@ -39,19 +47,22 @@
                     <li class="nav-item pl-3">
                       <a class="nav-link" href="#" style="color:blue;"><small>Ingresar</small></a>
                     </li>
-                    <li class="nav-item active ">
-                        <a class="nav-link" href="#"><small>carrito de compras</small></a>
-                      </li>
-                      <li class="nav-item active ">
-                          <a class="nav-link" href="#"><small>feisbuk</small></a>
+                    <li class="nav-item active px-2">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
                       </li>
                       <li class="nav-item active">
-                          <a class="nav-link" href="#"><small>twitter</small></a>
+                          <a class="nav-link text-info" href="#"><i class="fab fa-twitter fa-lg" ></i></a>
+                      </li>
+                      <li class="nav-item active pr-2">
+                          <a class="nav-link text-primary" href="#"><i class="fab fa-facebook-square fa-lg"></i></a>
                         </li>
-                      <li class="nav-item">
-                        <form class="form">
-                          <input type="text">
-                        </form>
+                      <li class="nav-item my-auto mx-auto">
+                          <div class="input-group mb-3">
+                              <input type="text" class="form-control" placeholder=" Buscar .." aria-label=" Buscar .." aria-describedby="basic-addon2">
+                              <div class="input-group-append">
+                                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                              </div>
+                            </div>
                       </li>
                   </ul>                          
                 </div>
@@ -77,8 +88,8 @@
                           </ul>                          
                         </div>
                 </nav>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <!-- <a class="navbar-brand" href="#"></a> -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary principal">
+                <a class="navbar-brand icono" href="#"><i class="fas fa-calculator fa-lg"></i></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -139,36 +150,89 @@
             <div class="col-sm-4">
               <div class="card text-center">
                 <div class="card-body">
-                  <h5 class="card-title">Aca va el icono</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugiat!</p>
-                  <a href="#" class="btn btn-primary">Ver Más</a>
+                  
+                  <h2 class="card-title" style="color:#007bff">
+                      <span class="fa-stack fa-2x">
+                          <i class="fas fa-circle fa-stack-2x"></i>
+                          <i class="fas fa-calculator fa-stack-1x fa-inverse"></i>
+                      </span>                     
+                    </h2>
+                    <h2 class="card-title">Lorem ipsum</h2>
+                  <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugiat!</p>
+                  <a href="#" class="btn btn-outline-primary btn-lg">Ver Más</a>
                 </div>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="card text-center">
                 <div class="card-body">
-                  <h5 class="card-title">Aca va el icono</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, velit.</p>
-                  <a href="#" class="btn btn-primary">Ver Más</a>
+                    <h2 class="card-title" style="color:#007bff">
+                        <span class="fa-stack fa-2x">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-truck-moving fa-stack-1x fa-inverse"></i>
+                          </span>
+                      </h2>
+                      <h2 class="card-title">Lorem ipsum</h2>
+                  <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, velit.</p>
+                  <a href="#" class="btn btn-outline-primary btn-lg">Ver Más</a>
                 </div>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="card text-center">
                 <div class="card-body">
-                  <h5 class="card-title">Aca va el icono</h5>
-                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, neque!</p>
-                  <a href="#" class="btn btn-primary">Ver Más</a>
+                    <h2 class="card-title" style="color:#007bff">
+                        <span class="fa-stack fa-2x">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-paint-brush fa-stack-1x fa-inverse"></i>
+                          </span>
+                      </h2>
+                      <h2 class="card-title">Lorem ipsum</h2>
+                  <p class="card-text text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, neque!</p>
+                  <a href="#" class="btn btn-outline-primary btn-lg">Ver Más</a>
                 </div>
               </div>
             </div>
           </div>      
         </div>
       </section>
-      <section class="contenido">
+      <section class="productos bg-light">
        <div class="container">
-
+        <h2 class="text-center text-success my-5">Productos Destacados</h2>
+        <div class="row">
+          <div class="col-3">
+              <div class="card">
+                  <img class="card-img-top img-thumbnail" src="img/img2.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">Lorem, ipsum.</p>
+                  </div>
+                </div>
+          </div>
+          <div class="col-3">
+              <div class="card">
+                  <img class="card-img-top img-thumbnail" src="img/img4.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text font-weight-bold">Lorem ipsum dolor sit.</p>
+                  </div>
+                </div>
+          </div>
+          <div class="col-3">
+              <div class="card">
+                  <img class="card-img-top img-thumbnail" src="img/img5.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text font-weight-bold">Lorem ipsum dolor sit.</p>
+                  </div>
+                </div>
+          </div>
+          <div class="col-3">
+              <div class="card">
+                  <img class="card-img-top img-thumbnail" src="img/img6.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text font-weight-bold">Lorem ipsum dolor sit.</p>
+                  </div>
+                </div>
+          </div>
+        </div>
        </div>
       </section>
     
@@ -191,7 +255,7 @@
       //  });
       //  });
       var cbpAnimatedHeader = (function() {
-
+        $(".icono").css("display","none");
 var docElem = document.documentElement,
   header = document.querySelector( '.navbar' ),
   didScroll = false,
@@ -209,10 +273,16 @@ function init() {
 function scrollPage() {
   var sy = scrollY();
   if ( sy >= changeHeaderOn ) {
-    $(".navbar").addClass("fixed-top");
+    $(".principal").addClass("fixed-top");
+    // $(".navbar-nav").removeClass("mx-auto");
+    // $(".navbar-nav").addClass("ml-auto");
+    // $(".icono").css("display","block");
   }
   else {
-    $(".navbar").removeClass("fixed-top");
+    // $(".icono").css("display","none");
+    $(".principal").removeClass("fixed-top");
+    // $(".navbar-nav").removeClass("ml-auto");
+    // $(".navbar-nav").addClass("mx-auto");
   }
   didScroll = false;
 }
