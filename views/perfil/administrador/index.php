@@ -76,16 +76,90 @@
           </div>      
         </div>
       </section>
+
+   <style>
+   /*Estilos Base*/
+.mascara{
+  display:none;
+}
+.productos .uno {
+width: 300px;
+height: 200px;
+float: left;
+overflow: hidden;
+position: relative;
+text-align: center;
+cursor: default;
+background: #fff;
+}
+.prodcutos .uno .card-body:hover{
+  display : block;
+}
+.productos .uno .card-body .mascara,.productos .uno .card-body{
+width: 300px;
+height: 200px;
+position: absolute;
+overflow: hidden;
+top: 0;
+left: 0
+}
+.productos .uno .card-body img {
+display: block;
+position: relative;
+
+}
+.productos .uno .card-body h2 {
+text-transform: uppercase;
+color: #fff;
+text-align: center;
+position: relative;
+font-size: 17px;
+padding: 10px;
+background: rgba(0, 0, 0, 0.9);
+margin: 20px 0 0 0
+}
+.productos .uno .card-body p {
+font-size: 12px;
+position: relative;
+color: #fff;
+padding: 10px 20px 10px;
+text-align: center
+}
+.productos .uno .card-body a.link {
+display: inline-block;
+text-decoration: none;
+padding: 7px 14px;
+background: #222;
+color: #fff;
+text-transform: uppercase;
+box-shadow: 0 0 1px #000
+}
+.productos .uno .card-body a.link:hover {
+
+box-shadow: 0 0 5px #000
+}
+.sombras{
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+   </style>
+
+
       <section class="productos bg-light">
        <div class="container">
         <h2 class="display-4 text-center text-success mb-5">Productos Destacados</h2>
         <div class="row">
           <div class="col-3">
-              <div class="card">
+              <div class="card" id="uno">
                   <img class="card-img-top" src="<?php echo URL?>public/img/test.jpg" alt="Card image cap">
                   <div class="card-body">
-                    <h5 class="card-title text-center">Lorem, ipsum.</h5>
-                  </div>
+                    <!-- <h5 class="card-title text-center">Lorem, ipsum.</h5> -->
+                  
+                      <div class="mascara">
+                        <h2>Ejemplo</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae tortor diam in ullamcorper malesuada.</p>
+                        <a class="link" href="#">Leer mas</a>
+                      </div>
+                    </div>
                 </div>
           </div>
           <div class="col-3">
@@ -147,116 +221,7 @@
           </div>
        </div>
       </section>
-      <section class="testimonio">        			
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 offset-md-2">
-                        <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>                
-                  <div id="fade-quote-carousel" class="carousel slide" data-ride="carousel">
-                      <ol class="carousel-indicators">
-                        <li data-target="#fade-quote-carousel" data-slide-to="0"></li>
-                        <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
-                        <li data-target="#fade-quote-carousel" data-slide-to="2" class="active"></li>
-                        <li data-target="#fade-quote-carousel" data-slide-to="3"></li>
-                        <li data-target="#fade-quote-carousel" data-slide-to="4"></li>
-                        <li data-target="#fade-quote-carousel" data-slide-to="5"></li>                        
-                      </ol>
-                  
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <h3 class="title text-center text-muted">Lorem, ipsum.</h3>                     
-                      <blockquote>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                      </blockquote>	
-                    </div>
-                    <div class="carousel-item">                                
-                                <h3 class="title text-center text-muted">Lorem, ipsum.</h3>
-                      <blockquote>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                      </blockquote>
-                    </div>
-                    <div class="carousel-item">
-                        <h3 class="title text-center text-muted">Lorem, ipsum.</h3>
-                      <blockquote>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                      </blockquote>
-                    </div>
-                            <div class="carousel-item">
-                                <h3 class="title text-center text-muted">Lorem, ipsum.</h3>
-                        <blockquote>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                      </blockquote>
-                    </div>
-                            <div class="carousel-item">
-                                <h3 class="title text-center text-muted">Lorem, ipsum.</h3>
-                        <blockquote>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                      </blockquote>
-                    </div>
-                            <div class="carousel-item">
-                                <h3 class="title text-center text-muted">Lorem, ipsum.</h3>
-                        <blockquote>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                      </blockquote>
-                    </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#fade-quote-carousel" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#fade-quote-carousel" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                </div>
-              </div>							
-            </div>
-          </div>
-      </section>
-        <div class="container">            
-           <div class="dropdown-divider"></div>        
-        </div>
-  <section class="logos text-center">
-    <!-- <div class="row justify-content-center">
-      <div class="col-4"> -->
-      <img src="<?php echo URL?>public/img/logos_pago.jpg" alt="" class="img-responsive d-line px-3" >
-      <img src="<?php echo URL?>public/img/logo_chilexpress.jpg" alt="" class=" img-responsive d-line px-3">
-    <!-- </div>
-    </div> -->
-  </section>
-  <div class="container">            
-      <div class="dropdown-divider"></div>        
-   </div>
-
-     <section class="menu2">
-        <nav class="navbar navbar-expand-lg navbar-light  bg-light">                        
-            <div class="collapse navbar-collapse navbarText" id="navbarText">
-              <ul class="navbar-nav mx-auto">
-                  <li class="nav-item active px-3">
-                      <a class="nav-link text-primary" href="#"><i class="fas fa-mobile-alt fa-lg"></i><strong> +569 666 666 666</strong> </a>
-                    </li>
-                <li class="nav-item active px-3">
-                  <a class="nav-link" href="#"><small>Contacto y ubicación</small></a>
-                </li>
-                <li class="nav-item px-3">
-                  <a class="nav-link" href="#"><small>Ayuda y soporte</small></a>
-                </li>
-                <li class="nav-item px-3">
-                  <a class="nav-link" href="#"><small>Quienes Somos</small></a>
-                </li>
-                <li class="nav-item active px-3">
-                    <a class="nav-link" href="#"><small>Arma Online</small></a>
-                  </li>
-                  <li class="nav-item px-3">
-                    <a class="nav-link" href="#"><small>Plataforma Empresa</small></a>
-                  </li>
-                  <li class="nav-item px-3">
-                    <a class="nav-link" href="#"><small>Política de cambio y devoluciones</small></a>
-                  </li>
-              </ul>                          
-            </div>
-        </nav>
-     </section>
+      
         
     
     
