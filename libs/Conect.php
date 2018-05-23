@@ -9,54 +9,96 @@ class Conect{
 		$this->usuario = DB_USER;
 		$this->pass = DB_PASS;
 		$this->base_datos = DB_NAME;
+    $this->charset = 'utf8';
 		$this->conectar();
 	}
     function conectar()
-    {
-        $this->my = new mysqli($this->servidor, $this->usuario, $this->pass, $this->base_datos);
+    {          
+    
+        try {
+              // $dsn = "mysql:host=$this->servidor;dbname=$this->base_datos;charset=$this->charset";
+              $dsn = "mysql:host=$this->servidor;charset=$this->charset;dbname=$this->base_datos";
+              $this->my = new PDO($dsn, $this->usuario, $this->pass);              
+              //creamos la base de datos si no existe
+                                         
+          } catch (PDOException $e) {
+              print "¡Error!: " . $e->getMessage() . "<br/>";
+              die();
+          }
     }
     // -------EJECUTA UNA CONSULTA A LA BASE DE DATOS
-	public function consulta($query)
+	public function consulta($query,$datos)
     {
-		$this->sql = $this->my->query($query);
-		if(!$this->sql){
-			$jsondata['tipo'] = 3;
-			echo json_encode($jsondata);
-			exit();
-		}
+      try{
+        $this->sql = $this->my->prepare($query);
+        if (!empty($datos)) {
+          $this->sql->execute($datos); 
+        }else{
+          $this->sql->execute(); 
+        }
+        
+        $this->my = null;
+      }
+      catch(PDOException $e){
+         $jsondata['tipo'] = $e->getMessage();
+         echo json_encode($jsondata); 
+         die();       
+      }  		  		
 	}
   public function consulta2($query)
     {
-    $this->sql2 = $this->my->query($query);
-    if(!$this->sql2){
-      $jsondata['tipo'] = 3;
-      echo json_encode($jsondata);
-      exit();
-    }
+     try{
+          $this->sql2 = $this->my->prepare($query);
+          $this->sql2->execute($datos); 
+          $this->my = null;
+        }
+        catch(PDOException $e){
+           $jsondata['tipo'] = $e->getMessage();
+           echo json_encode($jsondata); 
+           die();       
+        } 
   }
 	public function extraer_registro()
     {
-		if ($fila = $this->sql->fetch_array(MYSQLI_ASSOC)){
-			return $fila;
-		}
-		else {
-			return false;
-		}
+      try{
+        $fila = $this->sql->fetch();
+        return $fila;
+      }
+      catch(PDOException $e)
+      {
+         $jsondata['tipo'] = $e->getMessage();
+         echo json_encode($jsondata); 
+         die();
+      }
+
 	}
   public function extraer_registro2()
     {
-    if ($fila = $this->sql2->fetch_array(MYSQLI_ASSOC)){
-      return $fila;
+      try{
+        $fila = $this->sql2->fetch();
+        return $fila;
+      }
+      catch(PDOException $e)
+      {
+         $jsondata['tipo'] = $e->getMessage();
+         echo json_encode($jsondata); 
+         die();
+      }
     }
-    else {
-      return false;
-    }
-  }
     public function total()
     {
-		$cantidad= mysqli_num_rows($this->sql);
-		return $cantidad;
-	}
+      try{
+        $cantidad= $this->sql->rowCount();
+        return $cantidad;
+      }
+      catch(PDOException $e)
+      {
+         $jsondata['tipo'] = $e->getMessage();
+         echo json_encode($jsondata); 
+         die();
+      }
+  		
+	  }
 
     // CONSULTAS DINAMICAS SIMPLES
     // CONSULTAS I = Insert , S = select , U = Update , D = delete ;
@@ -81,7 +123,7 @@ class Conect{
     public function insert($tabla, $datos)
     {
       $result= "SHOW COLUMNS FROM ".$tabla;
-      $this->consulta($result);
+      $this->consulta($result,'');
             while($fila = $this->extraer_registro())
                  {
                     $campos[] = $fila['Field'];
@@ -96,16 +138,16 @@ class Conect{
                        $con .= $campos[$i].' , ';
                     }
                 }
-             $con .= ' ) VALUES (null,';
+             $con .= ') VALUES (';
                    if(isset($datos))
                    {
                       foreach($datos as $key => $value)
                         {
-                          if($key == 'pass'){
-                          $valores[] = md5($value);
-                          }else{
+                          // if($key == 'pass'){
+                          // $valores[] = md5($value);
+                          // }else{
                           $valores[] = $value;
-                          }
+                          // }
                         }
                        for($f = 0;$f<count($valores);$f++)
                           {
@@ -129,10 +171,10 @@ class Conect{
                           }
                       $con.= ')';
                       $this->consulta($con);
-                      $jsondata['tipo'] = 'user_guardado';
+                      $jsondata['msj'] = 'Registro guardado con exito';
 			                echo json_encode($jsondata);
                    }else{
-                      $jsondata['tipo'] = 'sin_datos';
+                      $jsondata['msj'] = 'sin_datos';
 			                echo json_encode($jsondata);
                    }
     }
@@ -212,10 +254,10 @@ class Conect{
          if($con)
          {
 			  $this->consulta($con);
-           $jsondata['tipo'] = 'user_eliminado';
+           $jsondata['msj'] = 'Registro eliminado con éxito';
          echo json_encode($jsondata);
          }else{
-              $jsondata['tipo'] = 'fallo_con';
+              $jsondata['msj'] = 'fallo_con';
          echo json_encode($jsondata);
          }
 

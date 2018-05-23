@@ -168,14 +168,17 @@ $(".productos .card").hover(function(){
   var aidi = $( this ).attr("id");
   // $("#"+aidi+"").addClass("shadow-lg");
   $("#"+aidi+"").addClass( "sombras" );
+  $("#"+aidi+" .mascara").css( "display","block" );
+ 
   }, function() {
     var aidi = $( this ).attr("id");
     $("#"+aidi+"").removeClass( "sombras" );
+    $("#"+aidi+" .mascara").css( "display","none" );
   
 });
      </script>
-    <script src="js/popper.min.js" ></script>
-    <script src="js/bootstrap.min.js" ></script>
+    <script src="<?php echo URL?>public/js/popper.min.js" ></script>
+    <script src="<?php echo URL?>public/js/bootstrap.min.js" ></script>
 
 <!-- <script>
  $(".select2").select2();

@@ -82,7 +82,7 @@
 .mascara{
   display:none;
 }
-.productos .uno {
+.productos #uno {
 width: 300px;
 height: 200px;
 float: left;
@@ -92,10 +92,10 @@ text-align: center;
 cursor: default;
 background: #fff;
 }
-.prodcutos .uno .card-body:hover{
+.productos #uno .card-body .mascara:hover{
   display : block;
 }
-.productos .uno .card-body .mascara,.productos .uno .card-body{
+.productos #uno .card-body .mascara,.productos #uno .card-body{
 width: 300px;
 height: 200px;
 position: absolute;
@@ -103,12 +103,12 @@ overflow: hidden;
 top: 0;
 left: 0
 }
-.productos .uno .card-body img {
+.productos #uno .card-body img {
 display: block;
 position: relative;
 
 }
-.productos .uno .card-body h2 {
+.productos #uno .card-body h2 {
 text-transform: uppercase;
 color: #fff;
 text-align: center;
@@ -118,14 +118,14 @@ padding: 10px;
 background: rgba(0, 0, 0, 0.9);
 margin: 20px 0 0 0
 }
-.productos .uno .card-body p {
+.productos #uno .card-body p {
 font-size: 12px;
 position: relative;
 color: #fff;
 padding: 10px 20px 10px;
 text-align: center
 }
-.productos .uno .card-body a.link {
+.productos #uno .card-body a.link {
 display: inline-block;
 text-decoration: none;
 padding: 7px 14px;
@@ -134,7 +134,7 @@ color: #fff;
 text-transform: uppercase;
 box-shadow: 0 0 1px #000
 }
-.productos .uno .card-body a.link:hover {
+.productos #uno .card-body a.link:hover {
 
 box-shadow: 0 0 5px #000
 }
