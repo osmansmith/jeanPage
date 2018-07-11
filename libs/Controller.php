@@ -9,6 +9,7 @@
           Session::init();
           // creo un objeto de la clase View
           $this->view = new View();
+          $this->page = new Pagina();
           // se carga el metodo loadmodel de la clase controller
           $this->loadModel();
           

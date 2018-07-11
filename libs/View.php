@@ -3,15 +3,20 @@
   class view
   {      
     # metodo render() que acepta un parametro  
-    function render($view)
+    public function render($view)
     {      
         # inclusion require para mostrar la pagina que se especifique en el parametro
-        require './views/'.$view.'.php';
-        
+        require './views/'.$view.'.php';        
     }
-    function renderpdf($view)
+
+    public function renderClass($class)
     {
-    	require './libs/'.$view.'.php';
+      require './libs/'.$view.'.php';
+    }
+
+    public function renderpdf()
+    {
+    	require './libs/mpdf/mpdf.php';
     }
 
                               

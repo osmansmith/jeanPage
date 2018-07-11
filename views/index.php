@@ -1,6 +1,30 @@
-
-    
- 
+  <?php 
+   URL.'index/clase/Pagina';
+   $pag = new Pagina();
+  //  parametros de Head() titulo,css externo, css interno
+   $pag->Head('Inicio | Jean Page','','
+   .presentacion{
+    margin: 10% 0;
+  }
+  .contenido{
+    padding: 10% 0;
+  }
+  .productos{
+    padding: 5% 0;
+    /* margin: 10% 0 10% 0; */
+  }
+  .presentacion .card{
+    border:none;
+  }
+  .productos .card{
+    margin: 3% 0;
+  }
+  .logos, .menu2{
+    padding: 3% 0;
+  }
+   ');
+  $pag->Header();?>    
+  
     <div class="slider">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
@@ -22,9 +46,10 @@
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="sr-only">Next</span>
                     </a>
-                  </div>
-    </div>    
-      <section class="presentacion">
+            </div>
+    </div>
+
+    <section class="presentacion">
         <div class="container">
           <div class="row">
             <div class="col-sm-4">
@@ -75,90 +100,17 @@
             </div>
           </div>      
         </div>
-      </section>
+    </section>
 
-   <style>
-   /*Estilos Base*/
-.mascara{
-  display:none;
-}
-.productos #uno {
-width: 300px;
-height: 200px;
-float: left;
-overflow: hidden;
-position: relative;
-text-align: center;
-cursor: default;
-background: #fff;
-}
-.productos #uno .card-body .mascara:hover{
-  display : block;
-}
-.productos #uno .card-body .mascara,.productos #uno .card-body{
-width: 300px;
-height: 200px;
-position: absolute;
-overflow: hidden;
-top: 0;
-left: 0
-}
-.productos #uno .card-body img {
-display: block;
-position: relative;
-
-}
-.productos #uno .card-body h2 {
-text-transform: uppercase;
-color: #fff;
-text-align: center;
-position: relative;
-font-size: 17px;
-padding: 10px;
-background: rgba(0, 0, 0, 0.9);
-margin: 20px 0 0 0
-}
-.productos #uno .card-body p {
-font-size: 12px;
-position: relative;
-color: #fff;
-padding: 10px 20px 10px;
-text-align: center
-}
-.productos #uno .card-body a.link {
-display: inline-block;
-text-decoration: none;
-padding: 7px 14px;
-background: #222;
-color: #fff;
-text-transform: uppercase;
-box-shadow: 0 0 1px #000
-}
-.productos #uno .card-body a.link:hover {
-
-box-shadow: 0 0 5px #000
-}
-.sombras{
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
-}
-   </style>
-
-
-      <section class="productos bg-light">
+    <section class="productos bg-light">
        <div class="container">
         <h2 class="display-4 text-center text-success mb-5">Productos Destacados</h2>
         <div class="row">
           <div class="col-3">
-              <div class="card" id="uno">
+              <div class="card">
                   <img class="card-img-top" src="<?php echo URL?>public/img/test.jpg" alt="Card image cap">
                   <div class="card-body">
-                    <!-- <h5 class="card-title text-center">Lorem, ipsum.</h5> -->
-                  
-                      <div class="mascara">
-                        <h2>Ejemplo</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae tortor diam in ullamcorper malesuada.</p>
-                        <a class="link" href="#">Leer mas</a>
-                      </div>
+                    <h5 class="card-title text-center">Lorem, ipsum.</h5>                                        
                     </div>
                 </div>
           </div>
@@ -220,8 +172,9 @@ box-shadow: 0 0 5px #000
             </div>
           </div>
        </div>
-      </section>
-      
+    </section>
+<?php $pag->Seccion();
+      $pag->footer('');?>      
         
     
     

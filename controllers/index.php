@@ -18,13 +18,21 @@
           
       }
       function index()      
-      {              
-        $this->view->render('perfil/administrador/add/head_');
-        $this->view->render('perfil/administrador/add/header_');
-        $this->view->render('perfil/administrador/index');
-        $this->view->render('perfil/administrador/add/js_');
-        $this->view->render('perfil/administrador/add/footer_');                                           
+      {                      
+        $this->view->render('index');                                              
       }  
+
+      public function clase($nombre)
+      {
+        $this->view->renderClass($nombre);        
+      }
+
+      
+
+      public function Header()
+      {
+        $this->page->Header();
+      }
 
       function salir()
       {
@@ -37,10 +45,9 @@
       } 
       function pdf()
       {
-          $this->view->renderpdf('mpdf/mpdf');
+          $this->view->renderpdf();
           $this->view->render('modulos/art/add/pdf');
-      } 
-       
+      }      
 
   }
 ?>
